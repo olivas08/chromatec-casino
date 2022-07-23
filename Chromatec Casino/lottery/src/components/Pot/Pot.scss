@@ -1,0 +1,78 @@
+.cwi-pot {
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  height: 200px;
+  width: 320px;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 320px;
+    height: 128px;
+    border-radius: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, #000000 46.35%, rgba(0, 0, 0, 0) 100%);
+    position: absolute;
+    top: 98px;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__total-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+  }
+  &__total-value {
+    text-align: center;
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  &__box-back {
+    background-image: url(./assets/box_back.svg);
+    background-size: contain;
+    width: 256px;
+    height: 74px;
+    position: absolute;
+    top: 126px;
+    left: 32px;
+    z-index: 2;
+  }
+
+  &__box-front {
+    background: linear-gradient(180deg, #F9F9F9 0%, #838383 88.54%, #555555 100%);
+    width: 256px;
+    height: 32px;
+    position: absolute;
+    top: 168px;
+    left: 32px;
+    z-index: 4;
+  }
+
+  &__box-chips {
+    background: url(./assets/chips.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 172px;
+    height: 149px;
+    position: absolute;
+    top: 200px;
+    left: 76px;
+    z-index: 3;
+    transition: transform 0.8s ease-in-out;
+
+  }
+
+  &--k &__box-chips {
+    transform: translateY(-96px);
+  }
+  &--m &__box-chips {
+    transform: translateY(-128px);
+  }
+  &--b &__box-chips {
+    transform: translateY(-152px);
+  }
+}

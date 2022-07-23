@@ -1,0 +1,387 @@
+@keyframes popChip {
+    0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0);
+    }
+    50% {
+        transform: translateY(-16px) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+.cwi-board-house {
+    background: none;
+    border-radius: 0;
+    position: relative;
+    cursor: inherit;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transition: all 0.2s ease-out;
+    overflow: visible;
+
+    &:before {
+        content: '';
+        width: 70px;
+        height: 70px;
+        background-image: radial-gradient(35px at center, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.1s ease-out;
+    }
+    &:hover {
+        background-color: transparent;
+        z-index: 99;
+    }
+    &:hover:before {
+        opacity: 1;
+    }
+
+    &__tooltip {
+        position: absolute;
+        background-color: #fff;
+        color: #333;
+        padding: 16px 24px ;
+        border-radius: 8px;
+        bottom: calc(50% + 24px);
+        left: 50%;
+        transform-style: flat;
+        transform: translateX(-50%);
+        opacity: 0;
+        pointer-events: none;
+        font-weight: bold;
+        white-space: nowrap;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        transition: all 0.2s ease-out;
+    }
+    &:hover &__tooltip {
+        opacity: 1;
+    }
+
+    &--winner {
+        z-index: 99;
+        box-shadow: 0 0 16px 8px rgba(255, 215, 0, 0.541), inset 0 0 16px rgb(255, 215, 0);
+    }
+
+    &__winner {
+        width: 54px;
+        height: 45px;
+        background-image: url(./assets/pin.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+        position: absolute;
+        bottom: 36px;
+        left: 9px;
+        filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.5));
+    }
+
+    &__pin {
+        background: none;
+        width: 54px;
+        height: 45px;
+        padding: 0;
+        font-family: inherit;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: -0.04em;
+        padding-bottom: 6px;
+        transition: all 0.2s ease-out;
+        cursor: inherit;
+        filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.5));
+        position: relative;
+        z-index: 1;
+        margin: 4px;
+        border: 0;
+        color: #333;
+        background-size: contain;
+        animation-name: popChip;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        
+        &--yellow {
+            background-image: url(./assets/chip_yellow.svg);
+        }
+        &--black {
+            background-image: url(./assets/chip_black.svg);
+        }
+        &--blue {
+            background-image: url(./assets/chip_blue.svg);
+        }
+        &--emerald {
+            background-image: url(./assets/chip_emerald.svg);
+        }
+        &--green {
+            background-image: url(./assets/chip_green.svg);
+        }
+        &--indigo {
+            background-image: url(./assets/chip_indigo.svg);
+        }
+        &--purple {
+            background-image: url(./assets/chip_purple.svg);
+        }
+        &--red {
+            background-image: url(./assets/chip_red.svg);
+        }
+    }
+
+    &-0 {
+        background-image: url(./assets/btn_0.svg);
+        grid-row: 1 / span 3;
+        grid-column: 1;
+    }
+    &-1 {
+        background-image: url(./assets/btn_1.svg);
+        grid-row: 3;
+        grid-column: 2;
+    }
+    &-2 {
+        background-image: url(./assets/btn_2.svg);
+        grid-row: 2;
+        grid-column: 2;
+    }
+    &-3 {
+        background-image: url(./assets/btn_3.svg);
+        grid-row: 1;
+        grid-column: 2;
+    }
+    &-4 {
+        background-image: url(./assets/btn_4.svg);
+        grid-row: 3;
+        grid-column: 3;
+    }
+    &-5 {
+        background-image: url(./assets/btn_5.svg);
+        grid-row: 2;
+        grid-column: 3;
+    }
+    &-6 {
+        background-image: url(./assets/btn_6.svg);
+        grid-row: 1;
+        grid-column: 3;
+    }
+    &-7 {
+        background-image: url(./assets/btn_7.svg);
+        grid-row: 3;
+        grid-column: 4;
+    }
+    &-8 {
+        background-image: url(./assets/btn_8.svg);
+        grid-row: 2;
+        grid-column: 4;
+    }
+    &-9 {
+        background-image: url(./assets/btn_9.svg);
+        grid-row: 1;
+        grid-column: 4;
+    }
+    &-10 {
+        background-image: url(./assets/btn_10.svg);
+        grid-row: 3;
+        grid-column: 5;
+    }
+    &-11 {
+        background-image: url(./assets/btn_11.svg);
+        grid-row: 2;
+        grid-column: 5;
+    }
+    &-12 {
+        background-image: url(./assets/btn_12.svg);
+        grid-row: 1;
+        grid-column: 5;
+    }
+    &-13 {
+        background-image: url(./assets/btn_13.svg);
+        grid-row: 3;
+        grid-column: 6;
+    }
+    &-14 {
+        background-image: url(./assets/btn_14.svg);
+        grid-row: 2;
+        grid-column: 6;
+    }
+    &-15 {
+        background-image: url(./assets/btn_15.svg);
+        grid-row: 1;
+        grid-column: 6;
+    }
+    &-16 {
+        background-image: url(./assets/btn_16.svg);
+        grid-row: 3;
+        grid-column: 7;
+    }
+    &-17 {
+        background-image: url(./assets/btn_17.svg);
+        grid-row: 2;
+        grid-column: 7;
+    }
+    &-18 {
+        background-image: url(./assets/btn_18.svg);
+        grid-row: 1;
+        grid-column: 7;
+    }
+    &-19 {
+        background-image: url(./assets/btn_19.svg);
+        grid-row: 3;
+        grid-column: 8;
+    }
+    &-20 {
+        background-image: url(./assets/btn_20.svg);
+        grid-row: 2;
+        grid-column: 8;
+    }
+    &-21 {
+        background-image: url(./assets/btn_21.svg);
+        grid-row: 1;
+        grid-column: 8;
+    }
+    &-22 {
+        background-image: url(./assets/btn_22.svg);
+        grid-row: 3;
+        grid-column: 9;
+    }
+    &-23 {
+        background-image: url(./assets/btn_23.svg);
+        grid-row: 2;
+        grid-column: 9;
+    }
+    &-24 {
+        background-image: url(./assets/btn_24.svg);
+        grid-row: 1;
+        grid-column: 9;
+    }
+    &-25 {
+        background-image: url(./assets/btn_25.svg);
+        grid-row: 3;
+        grid-column: 10;
+    }
+    &-26 {
+        background-image: url(./assets/btn_26.svg);
+        grid-row: 2;
+        grid-column: 10;
+    }
+    &-27 {
+        background-image: url(./assets/btn_27.svg);
+        grid-row: 1;
+        grid-column: 10;
+    }
+    &-28 {
+        background-image: url(./assets/btn_28.svg);
+        grid-row: 3;
+        grid-column: 11;
+    }
+    &-29 {
+        background-image: url(./assets/btn_29.svg);
+        grid-row: 2;
+        grid-column: 11;
+    }
+    &-30 {
+        background-image: url(./assets/btn_30.svg);
+        grid-row: 1;
+        grid-column: 11;
+    }
+    &-31 {
+        background-image: url(./assets/btn_31.svg);
+        grid-row: 3;
+        grid-column: 12;
+    }
+    &-32 {
+        background-image: url(./assets/btn_32.svg);
+        grid-row: 2;
+        grid-column: 12;
+    }
+    &-33 {
+        background-image: url(./assets/btn_33.svg);
+        grid-row: 1;
+        grid-column: 12;
+    }
+    &-34 {
+        background-image: url(./assets/btn_34.svg);
+        grid-row: 3;
+        grid-column: 13;
+    }
+    &-35 {
+        background-image: url(./assets/btn_35.svg);
+        grid-row: 2;
+        grid-column: 13;
+    }
+    &-36 {
+        background-image: url(./assets/btn_36.svg);
+        grid-row: 1;
+        grid-column: 13;
+    }
+
+    &-2to1-r1 {
+        background-image: url(./assets/btn_2to1_r1.svg);
+        grid-row: 1;
+        grid-column: 14;
+    }
+    &-2to1-r2 {
+        background-image: url(./assets/btn_2to1_r2.svg);
+        grid-row: 2;
+        grid-column: 14;
+    }
+    &-2to1-r3 {
+        background-image: url(./assets/btn_2to1_r3.svg);
+        grid-row: 3;
+        grid-column: 14;
+    }
+
+    &-1st12 {
+        background-image: url(./assets/btn_1st12.svg);
+        grid-row: 4;
+        grid-column: 2 / span 4;
+    }
+    &-2nd12 {
+        background-image: url(./assets/btn_2nd12.svg);
+        grid-row: 4;
+        grid-column: 6 / span 4;
+    }
+    &-3rd12 {
+        background-image: url(./assets/btn_3rd12.svg);
+        grid-row: 4;
+        grid-column: 10 / span 4;
+    }
+
+    &-1to18 {
+        background-image: url(./assets/btn_1to18.svg);
+        grid-row: 5;
+        grid-column: 2 / span 2;
+    }
+    &-odd {
+        background-image: url(./assets/btn_odd.svg);
+        grid-row: 5;
+        grid-column: 4 / span 2;
+    }
+    &-red {
+        background-image: url(./assets/btn_red.svg);
+        grid-row: 5;
+        grid-column: 6 / span 2;
+    }
+    &-black {
+        background-image: url(./assets/btn_black.svg);
+        grid-row: 5;
+        grid-column: 8 / span 2;
+    }
+    &-even {
+        background-image: url(./assets/btn_even.svg);
+        grid-row: 5;
+        grid-column: 10 / span 2;
+    }
+    &-19to36 {
+        background-image: url(./assets/btn_19to36.svg);
+        grid-row: 5;
+        grid-column: 12 / span 2;
+    }
+}

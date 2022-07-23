@@ -1,0 +1,102 @@
+.cwi-book {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    z-index: 20;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(32px) saturate(1.5);
+    color: #fff;
+    box-shadow: 0 16px 64px -4px rgba(0,0,0,0.8);
+    display: block;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(99.09deg, #985A07 0%, #D3A923 51.56%, #B68717 100%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    &__header {
+        padding: 16px 16px 16px 20px;
+        grid-row: 1;
+        grid-column: 1;
+        display: grid;
+        grid-template-columns: 1fr 32px;
+        align-items: center;
+
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+
+        &-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        &-close {
+            grid-column: 3;
+            grid-row: 1;
+            width: 32px;
+            height: 32px;
+            padding: 8px;
+            border: 0;
+        }
+    }
+
+    &__list {
+        grid-row: 2;
+        grid-column: 1;
+        overflow: scroll;
+        padding: 16px 8px 16px 20px;
+    }
+
+    &__footer {
+        padding: 16px 16px 16px 20px;
+        grid-row: 3;
+        grid-column: 1;
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    &__entry {
+        display: grid;
+        grid-template-columns: 1fr auto 32px;
+        column-gap: 8px;
+        align-items: center;
+        
+
+        &-house {
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 14px;
+        }
+
+        &-value {
+            grid-column: 2;
+            grid-row: 1;
+            font-size: 12px;
+        }
+
+        &-delete {
+            grid-column: 3;
+            grid-row: 1;
+            width: 32px;
+            height: 32px;
+            padding: 8px;
+            border: 0;
+        }
+    }
+}

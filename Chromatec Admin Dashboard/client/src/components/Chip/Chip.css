@@ -1,0 +1,65 @@
+.cwi-chip {
+  background: none;
+  width: 48px;
+  height: 40px;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: -0.04em;
+  padding-bottom: 5px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 1;
+  margin: 4px 8px;
+  border: 0;
+  color: #333;
+  background-size: contain;
+}
+
+.cwi-chip:hover {
+  background-color: transparent;
+  z-index: 3;
+  filter: drop-shadow(4px 6px 2px rgba(0, 0, 0, 0.5));
+  transform: translateY(-4px);
+}
+
+.cwi-chip--selected {
+  filter: drop-shadow(4px 10px 4px rgba(0, 0, 0, 0.4)) !important;
+  transform: translateY(-8px) !important;
+  z-index: 3;
+}
+
+.cwi-chip--yellow {
+  background-image: url(./assets/chip_yellow.svg);
+}
+
+.cwi-chip--black {
+  background-image: url(./assets/chip_black.svg);
+}
+
+.cwi-chip--blue {
+  background-image: url(./assets/chip_blue.svg);
+}
+
+.cwi-chip--emerald {
+  background-image: url(./assets/chip_emerald.svg);
+}
+
+.cwi-chip--green {
+  background-image: url(./assets/chip_green.svg);
+}
+
+.cwi-chip--indigo {
+  background-image: url(./assets/chip_indigo.svg);
+}
+
+.cwi-chip--purple {
+  background-image: url(./assets/chip_purple.svg);
+}
+
+.cwi-chip--red {
+  background-image: url(./assets/chip_red.svg);
+}

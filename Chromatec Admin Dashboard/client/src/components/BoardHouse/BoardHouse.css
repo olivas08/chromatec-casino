@@ -1,0 +1,443 @@
+@keyframes popChip {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0);
+  }
+  50% {
+    transform: translateY(-16px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.cwi-board-house {
+  background: none;
+  border-radius: 0;
+  position: relative;
+  cursor: inherit;
+  border: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transition: all 0.2s ease-out;
+  overflow: visible;
+}
+
+.cwi-board-house:before {
+  content: '';
+  width: 70px;
+  height: 70px;
+  background-image: radial-gradient(35px at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+.cwi-board-house:hover {
+  background-color: transparent;
+  z-index: 99;
+}
+
+.cwi-board-house:hover:before {
+  opacity: 1;
+}
+
+.cwi-board-house__tooltip {
+  position: absolute;
+  background-color: #fff;
+  color: #333;
+  padding: 16px 24px;
+  border-radius: 8px;
+  bottom: calc(50% + 24px);
+  left: 50%;
+  transform-style: flat;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-out;
+}
+
+.cwi-board-house:hover .cwi-board-house__tooltip {
+  opacity: 1;
+}
+
+.cwi-board-house--winner {
+  z-index: 99;
+  box-shadow: 0 0 16px 8px rgba(255, 215, 0, 0.541), inset 0 0 16px gold;
+}
+
+.cwi-board-house__winner {
+  width: 54px;
+  height: 45px;
+  background-image: url(./assets/pin.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  position: absolute;
+  bottom: 36px;
+  left: 9px;
+  filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.cwi-board-house__pin {
+  background: none;
+  width: 54px;
+  height: 45px;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  padding-bottom: 6px;
+  transition: all 0.2s ease-out;
+  cursor: inherit;
+  filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 1;
+  margin: 4px;
+  border: 0;
+  color: #333;
+  background-size: contain;
+  animation-name: popChip;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cwi-board-house__pin--yellow {
+  background-image: url(./assets/chip_yellow.svg);
+}
+
+.cwi-board-house__pin--black {
+  background-image: url(./assets/chip_black.svg);
+}
+
+.cwi-board-house__pin--blue {
+  background-image: url(./assets/chip_blue.svg);
+}
+
+.cwi-board-house__pin--emerald {
+  background-image: url(./assets/chip_emerald.svg);
+}
+
+.cwi-board-house__pin--green {
+  background-image: url(./assets/chip_green.svg);
+}
+
+.cwi-board-house__pin--indigo {
+  background-image: url(./assets/chip_indigo.svg);
+}
+
+.cwi-board-house__pin--purple {
+  background-image: url(./assets/chip_purple.svg);
+}
+
+.cwi-board-house__pin--red {
+  background-image: url(./assets/chip_red.svg);
+}
+
+.cwi-board-house-0 {
+  background-image: url(./assets/btn_0.svg);
+  grid-row: 1 / span 3;
+  grid-column: 1;
+}
+
+.cwi-board-house-1 {
+  background-image: url(./assets/btn_1.svg);
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.cwi-board-house-2 {
+  background-image: url(./assets/btn_2.svg);
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.cwi-board-house-3 {
+  background-image: url(./assets/btn_3.svg);
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.cwi-board-house-4 {
+  background-image: url(./assets/btn_4.svg);
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.cwi-board-house-5 {
+  background-image: url(./assets/btn_5.svg);
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.cwi-board-house-6 {
+  background-image: url(./assets/btn_6.svg);
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.cwi-board-house-7 {
+  background-image: url(./assets/btn_7.svg);
+  grid-row: 3;
+  grid-column: 4;
+}
+
+.cwi-board-house-8 {
+  background-image: url(./assets/btn_8.svg);
+  grid-row: 2;
+  grid-column: 4;
+}
+
+.cwi-board-house-9 {
+  background-image: url(./assets/btn_9.svg);
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.cwi-board-house-10 {
+  background-image: url(./assets/btn_10.svg);
+  grid-row: 3;
+  grid-column: 5;
+}
+
+.cwi-board-house-11 {
+  background-image: url(./assets/btn_11.svg);
+  grid-row: 2;
+  grid-column: 5;
+}
+
+.cwi-board-house-12 {
+  background-image: url(./assets/btn_12.svg);
+  grid-row: 1;
+  grid-column: 5;
+}
+
+.cwi-board-house-13 {
+  background-image: url(./assets/btn_13.svg);
+  grid-row: 3;
+  grid-column: 6;
+}
+
+.cwi-board-house-14 {
+  background-image: url(./assets/btn_14.svg);
+  grid-row: 2;
+  grid-column: 6;
+}
+
+.cwi-board-house-15 {
+  background-image: url(./assets/btn_15.svg);
+  grid-row: 1;
+  grid-column: 6;
+}
+
+.cwi-board-house-16 {
+  background-image: url(./assets/btn_16.svg);
+  grid-row: 3;
+  grid-column: 7;
+}
+
+.cwi-board-house-17 {
+  background-image: url(./assets/btn_17.svg);
+  grid-row: 2;
+  grid-column: 7;
+}
+
+.cwi-board-house-18 {
+  background-image: url(./assets/btn_18.svg);
+  grid-row: 1;
+  grid-column: 7;
+}
+
+.cwi-board-house-19 {
+  background-image: url(./assets/btn_19.svg);
+  grid-row: 3;
+  grid-column: 8;
+}
+
+.cwi-board-house-20 {
+  background-image: url(./assets/btn_20.svg);
+  grid-row: 2;
+  grid-column: 8;
+}
+
+.cwi-board-house-21 {
+  background-image: url(./assets/btn_21.svg);
+  grid-row: 1;
+  grid-column: 8;
+}
+
+.cwi-board-house-22 {
+  background-image: url(./assets/btn_22.svg);
+  grid-row: 3;
+  grid-column: 9;
+}
+
+.cwi-board-house-23 {
+  background-image: url(./assets/btn_23.svg);
+  grid-row: 2;
+  grid-column: 9;
+}
+
+.cwi-board-house-24 {
+  background-image: url(./assets/btn_24.svg);
+  grid-row: 1;
+  grid-column: 9;
+}
+
+.cwi-board-house-25 {
+  background-image: url(./assets/btn_25.svg);
+  grid-row: 3;
+  grid-column: 10;
+}
+
+.cwi-board-house-26 {
+  background-image: url(./assets/btn_26.svg);
+  grid-row: 2;
+  grid-column: 10;
+}
+
+.cwi-board-house-27 {
+  background-image: url(./assets/btn_27.svg);
+  grid-row: 1;
+  grid-column: 10;
+}
+
+.cwi-board-house-28 {
+  background-image: url(./assets/btn_28.svg);
+  grid-row: 3;
+  grid-column: 11;
+}
+
+.cwi-board-house-29 {
+  background-image: url(./assets/btn_29.svg);
+  grid-row: 2;
+  grid-column: 11;
+}
+
+.cwi-board-house-30 {
+  background-image: url(./assets/btn_30.svg);
+  grid-row: 1;
+  grid-column: 11;
+}
+
+.cwi-board-house-31 {
+  background-image: url(./assets/btn_31.svg);
+  grid-row: 3;
+  grid-column: 12;
+}
+
+.cwi-board-house-32 {
+  background-image: url(./assets/btn_32.svg);
+  grid-row: 2;
+  grid-column: 12;
+}
+
+.cwi-board-house-33 {
+  background-image: url(./assets/btn_33.svg);
+  grid-row: 1;
+  grid-column: 12;
+}
+
+.cwi-board-house-34 {
+  background-image: url(./assets/btn_34.svg);
+  grid-row: 3;
+  grid-column: 13;
+}
+
+.cwi-board-house-35 {
+  background-image: url(./assets/btn_35.svg);
+  grid-row: 2;
+  grid-column: 13;
+}
+
+.cwi-board-house-36 {
+  background-image: url(./assets/btn_36.svg);
+  grid-row: 1;
+  grid-column: 13;
+}
+
+.cwi-board-house-2to1-r1 {
+  background-image: url(./assets/btn_2to1_r1.svg);
+  grid-row: 1;
+  grid-column: 14;
+}
+
+.cwi-board-house-2to1-r2 {
+  background-image: url(./assets/btn_2to1_r2.svg);
+  grid-row: 2;
+  grid-column: 14;
+}
+
+.cwi-board-house-2to1-r3 {
+  background-image: url(./assets/btn_2to1_r3.svg);
+  grid-row: 3;
+  grid-column: 14;
+}
+
+.cwi-board-house-1st12 {
+  background-image: url(./assets/btn_1st12.svg);
+  grid-row: 4;
+  grid-column: 2 / span 4;
+}
+
+.cwi-board-house-2nd12 {
+  background-image: url(./assets/btn_2nd12.svg);
+  grid-row: 4;
+  grid-column: 6 / span 4;
+}
+
+.cwi-board-house-3rd12 {
+  background-image: url(./assets/btn_3rd12.svg);
+  grid-row: 4;
+  grid-column: 10 / span 4;
+}
+
+.cwi-board-house-1to18 {
+  background-image: url(./assets/btn_1to18.svg);
+  grid-row: 5;
+  grid-column: 2 / span 2;
+}
+
+.cwi-board-house-odd {
+  background-image: url(./assets/btn_odd.svg);
+  grid-row: 5;
+  grid-column: 4 / span 2;
+}
+
+.cwi-board-house-red {
+  background-image: url(./assets/btn_red.svg);
+  grid-row: 5;
+  grid-column: 6 / span 2;
+}
+
+.cwi-board-house-black {
+  background-image: url(./assets/btn_black.svg);
+  grid-row: 5;
+  grid-column: 8 / span 2;
+}
+
+.cwi-board-house-even {
+  background-image: url(./assets/btn_even.svg);
+  grid-row: 5;
+  grid-column: 10 / span 2;
+}
+
+.cwi-board-house-19to36 {
+  background-image: url(./assets/btn_19to36.svg);
+  grid-row: 5;
+  grid-column: 12 / span 2;
+}

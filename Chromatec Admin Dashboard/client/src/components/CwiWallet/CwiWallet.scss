@@ -1,0 +1,123 @@
+.cwi-wallet {
+    &__popover {
+        background: rgba(0,0,0,0.5);
+        border: 1px solid rgba(255,255,255,0.2);
+        backdrop-filter: blur(32px) saturate(1.5);
+        border-radius: 8px;
+        color: #fff;
+        position: absolute;
+        top: 44px;
+        right: 0;
+        width: 288px;
+        box-shadow: 0 16px 64px -4px rgba(0,0,0,0.8);
+        display: block;
+        overflow: auto;
+        animation-name: fadeFromTop;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+    &__button {
+        background: none;
+        padding: 8px 12px;
+        font-family: inherit;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+      
+        &:hover {
+          background-color: rgba(255,255,255,0.2);
+        }
+      
+        &:active {
+          background-color: rgba(255,255,255,0.4);
+        }
+    }
+    input {
+        background-color: transparent;
+        color: #fff;
+        font-family: inherit;
+        border: 2px solid rgba(255,255,255,0.5);
+        border-radius: 4px;
+        padding: 8px 12px;
+        outline: none;
+
+        &:focus {
+            background-color: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,1);
+        }
+    }
+
+    &__toggle {
+        white-space: nowrap;
+        color: #fff;
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 8px;
+
+        input {
+            width: 100%;
+        }
+        input[type=range] {
+            padding: 0;
+            border: 0;
+        }
+        button {
+            width: 100%;
+        }
+    }
+    hr {
+        height: 1px;
+        background-color: rgba(255,255,255,0.2);
+    }
+
+    &__balance {
+        padding: 16px;
+
+        label {
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    &__management {
+        padding: 16px;
+
+        label {
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    &__account {
+        background-color: rgba(255,255,255,0.2);
+        padding: 16px;
+
+        &-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 auto 16px auto;
+        }
+        &-contract {
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}
+
+@keyframes fadeFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

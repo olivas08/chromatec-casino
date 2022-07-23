@@ -1,0 +1,14 @@
+.cwi-toast {
+  position: fixed;
+  z-index: 900;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(32px) saturate(1.5);
+  color: #fff;
+  box-shadow: 0 16px 64px -4px rgba(0, 0, 0, 0.8);
+  bottom: 24px;
+  left: 50%;
+  max-width: 320px;
+  border-radius: 8px;
+  transform: translateX(-50%);
+}

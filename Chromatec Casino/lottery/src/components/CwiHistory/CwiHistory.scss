@@ -1,0 +1,45 @@
+.cwi-history {
+    position: absolute;
+    left: calc(50% - 464px);
+    top: 128px;
+    width: 200px;
+    height: 240px;
+    z-index: 1;
+    background: linear-gradient(99.09deg, #985A07 0%, #D3A923 51.56%, #B68717 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+    
+    &__content {
+        background: rgba(0,0,0,0.9);
+        border-radius: 4px 4px 0 0;
+        position: absolute;
+        inset: 4px 4px 0 4px;
+        padding: 16px 0 0 0;
+        overflow: hidden;
+    }
+    &__account {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    &__date {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    label {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        display: block;
+        letter-spacing: 0.1em;
+        background: linear-gradient(99.09deg, #985A07 0%, #D3A923 51.56%, #B68717 100%);
+        -moz-text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        margin-bottom: 16px;
+    }
+}

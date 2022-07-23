@@ -1,0 +1,145 @@
+.cwi-buy-tickets {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.cwi-buy-tickets__quantity {
+  position: absolute;
+  left: calc(50% - 216px);
+  top: 50%;
+  transform: translateY(-50%);
+  height: 48px;
+  display: flex;
+}
+
+.cwi-buy-tickets__quantity-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.cwi-buy-tickets__quantity-decrease, .cwi-buy-tickets__quantity-increase {
+  width: 32px;
+  height: 24px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 20px;
+  padding: 0;
+  text-align: center;
+}
+
+.cwi-buy-tickets__quantity-decrease {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.7697 1.3067L6.01969 5.77545C5.86344 5.9317 5.67594 5.9942 5.51969 5.9942C5.33219 5.9942 5.14469 5.9317 4.98844 5.8067L0.238436 1.3067C-0.0740645 1.02545 -0.0740645 0.556703 0.207186 0.244203C0.488436 -0.0682967 0.957186 -0.0682967 1.26969 0.212953L5.51969 4.21295L9.73844 0.212953C10.0509 -0.0682967 10.5197 -0.0682967 10.8009 0.244203C11.0822 0.556703 11.0822 1.02545 10.7697 1.3067Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0 0 4px 0;
+}
+
+.cwi-buy-tickets__quantity-increase {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.734529 4.72452L5.48453 0.255768C5.64078 0.0995178 5.82828 0.00576782 6.01578 0.00576782C6.17203 0.00576782 6.35953 0.0995178 6.51578 0.224518L11.2658 4.69327C11.5783 4.97452 11.5783 5.44327 11.297 5.75577C11.0158 6.06827 10.547 6.06827 10.2345 5.78702L5.98453 1.78702L1.76578 5.78702C1.45328 6.06827 0.984529 6.06827 0.703279 5.75577C0.422029 5.47452 0.422029 5.00577 0.734529 4.72452Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0 4px 0 0;
+}
+
+.cwi-buy-tickets__quantity input {
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  font-size: 24px;
+  width: 80px;
+  background: none;
+  border-radius: 4px 0 0 4px;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  font-family: inherit;
+  transition: all 0.2s ease-out;
+}
+
+.cwi-buy-tickets__quantity input::-webkit-inner-spin-button, .cwi-buy-tickets__quantity input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cwi-buy-tickets__quantity input:focus {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cwi-buy-tickets__animation {
+  z-index: 9;
+  width: 188px;
+  height: 188px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cwi-buy-tickets__animation:before {
+  content: '';
+  display: block;
+  background-image: url(./assets/glow.png);
+  background-size: contain;
+  width: 188px;
+  height: 188px;
+  animation-name: glowAnimation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  border-radius: 50%;
+}
+
+.cwi-buy-tickets__animation.animate:before {
+  opacity: 1;
+}
+
+.cwi-buy-tickets__btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%) translateY(-50%);
+  cursor: pointer;
+  background: linear-gradient(180deg, #D3A923 20%, #B68717 65%, #945D0A 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  color: #FFFFFF;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 16px 24px;
+  font-family: inherit;
+  transition: all 0.4s ease-out;
+  pointer-events: all;
+}
+
+.cwi-buy-tickets__btn:hover {
+  transform: translateX(-50%) translateY(-55%);
+  filter: brightness(1.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.cwi-buy-tickets__btn:disabled {
+  transform: translateX(-50%) translateY(-50%);
+  cursor: not-allowed;
+  color: #767676;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.5);
+  filter: none;
+  background: linear-gradient(0deg, #3C3C3C 0%, #333333 55.73%, #1F1F1F 96.35%);
+  opacity: 1;
+}
+
+.cwi-buy-tickets__cost {
+  position: absolute;
+  left: calc(50% + 100px);
+  white-space: nowrap;
+  top: 50%;
+  transform: translateY(-50%);
+}

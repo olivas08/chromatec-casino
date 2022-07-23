@@ -1,0 +1,127 @@
+.cwi-wallet__popover {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(32px) saturate(1.5);
+  border-radius: 8px;
+  color: #fff;
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 288px;
+  box-shadow: 0 16px 64px -4px rgba(0, 0, 0, 0.8);
+  display: block;
+  overflow: auto;
+  animation-name: fadeFromTop;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.cwi-wallet__button {
+  background: none;
+  padding: 8px 12px;
+  font-family: inherit;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.cwi-wallet__button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cwi-wallet__button:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.cwi-wallet input {
+  background-color: transparent;
+  color: #fff;
+  font-family: inherit;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  padding: 8px 12px;
+  outline: none;
+}
+
+.cwi-wallet input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+.cwi-wallet__toggle {
+  white-space: nowrap;
+  color: #fff;
+}
+
+.cwi-wallet__form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 8px;
+}
+
+.cwi-wallet__form input {
+  width: 100%;
+}
+
+.cwi-wallet__form input[type=range] {
+  padding: 0;
+  border: 0;
+}
+
+.cwi-wallet__form button {
+  width: 100%;
+}
+
+.cwi-wallet hr {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cwi-wallet__balance {
+  padding: 16px;
+}
+
+.cwi-wallet__balance label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cwi-wallet__management {
+  padding: 16px;
+}
+
+.cwi-wallet__management label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cwi-wallet__account {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 16px;
+}
+
+.cwi-wallet__account-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 auto 16px auto;
+}
+
+.cwi-wallet__account-contract {
+  text-align: center;
+  font-size: 12px;
+}
+
+@keyframes fadeFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

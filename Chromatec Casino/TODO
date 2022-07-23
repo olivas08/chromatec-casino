@@ -1,0 +1,13 @@
+[-] Status bar
+[x] Time left
+[x] Winnning number on top of roullete
+[x] pin na mesa
+[x] if won how much
+[ ] subscribe de events (TEST)
+[ ] Mensagens de erro do Metamask (cath calls)
+[x] Table needs to clear after spin
+[x] Update balance after win or loose
+
+
+
+Hora da bet tem de ser inferior ao nextSpin.

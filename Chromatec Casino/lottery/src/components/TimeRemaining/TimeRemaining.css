@@ -1,0 +1,25 @@
+.cwi-time-remaining {
+  text-align: right;
+  font-feature-settings: "tnum";
+}
+
+.cwi-time-remaining strong {
+  font-size: 12px;
+  display: block;
+}
+
+.cwi-time-remaining__time {
+  letter-spacing: -0.02em;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cwi-time-remaining__time .seconds {
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+.cwi-time-remaining__date {
+  opacity: 0.5;
+  font-size: 12px;
+}

@@ -1,0 +1,10 @@
+.cwi-tickets-sold {
+  margin-top: 32px;
+  text-align: right;
+  font-feature-settings: "tnum";
+}
+
+.cwi-tickets-sold strong {
+  font-size: 12px;
+  display: block;
+}
